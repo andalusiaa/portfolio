@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography — Tristan Gage</title>
+<meta name="description" content="Tristan Gage — photography. Landscapes, street, portraits, events and one very committed infrared project.">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="nav" id="top">
+  <a class="nav__mark" href="index.html" aria-label="Tristan Gage — home">
+    <img class="nav__mark-img" src="assets/img/tg-mark.png" alt="Tristan Gage logo">
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <span class="nav__indicator" aria-hidden="true"></span>
+    <a href="index.html#about">About</a>
+    <a href="index.html#work">Work</a>
+    <a href="photography.html" aria-current="page">Photography</a>
+    <a href="index.html#side">Side</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <a class="nav__cta" href="index.html#contact">Get in touch</a>
+  <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html#about">About</a>
+  <a href="index.html#work">Work</a>
+  <a href="photography.html">Photography</a>
+  <a href="index.html#side">Side</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- ============ PAGE INTRO ============ -->
+<section class="page-intro">
+  <div class="container">
+    <p class="eyebrow">Photography</p>
+    <h1>Photography, mostly on the side</h1>
+    <p class="page-intro__sub">Landscapes, street, portraits, events, and one very committed infrared project — shot over several years, wherever I happened to be standing. Nine collections below; full-resolution sets to follow.</p>
+  </div>
+</section>
+
+<!-- ============ GALLERY GRID ============ -->
+<section class="work work--gallery">
+  <div class="container">
+    <div class="work-grid">
+
+      <!-- Barbican Dreamland -->
+      <button class="work-card" data-modal="modal-barbican">
+        <span class="media-placeholder ratio-tall">
+          <span class="media-placeholder__label">IMG · barbican-dreamland-01.jpg</span>
+        </span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Infrared · Barbican, London</span>
+          <span class="work-card__title">Barbican Dreamland</span>
+          <span class="work-card__desc">A study in infrared photography — pinks instead of the expected greens.</span>
+        </span>
+      </button>
+
+      <!-- Colorado -->
+      <button class="work-card" data-modal="modal-colorado">
+        <span class="media-placeholder ratio-4-3">
+          <span class="media-placeholder__label">IMG · colorado-hero.jpg</span>
+        </span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Travel · Colorado, USA</span>
+          <span class="work-card__title">Colorado</span>
+          <span class="work-card__desc">Stunning vistas and incredible landscapes, hit by a blanket of snow.</span>
+        </span>
+      </button>
+
+      <!-- It's Coming Home -->
+      <button class="work-card" data-modal="modal-comehome">
+        <span class="media-placeholder ratio-4-3">
+          <span class="media-placeholder__label">IMG · its-coming-home-01.jpg</span>
+        </span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Street / Events · Central London</span>
+          <span class="work-card__title">It's Coming Home</span>
+          <span class="work-card__desc">The energy and chaos of the Euro 2020 Men's Final, in the streets of London.</span>
+        </span>
+      </button>
+
+      <!-- Land of Ice and Fire -->
+      <button class="work-card" data-modal="modal-iceland">
+        <span class="media-placeholder ratio-tall">
+          <span class="media-placeholder__label">VIDEO · iceland-coast.mp4</span>
+        </span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Travel · Iceland</span>
+          <span class="work-card__title">Land of Ice and Fire</span>
+          <span class="work-card__desc">The natural beauty of Iceland, with an emphasis on the south coast's water features.</span>
+        </span>
+      </button>
+
+      <!-- Light And Shadow -->
+      <button class="work-card" data-modal="modal-lightshadow">
+        <span class="media-placeholder ratio-4-3">
+          <span class="media-placeholder__label">IMG · light-and-shadow-01.jpg</span>
+        </span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Street Photography</span>
+          <span class="work-card__title">Light And Shadow</span>
+          <span class="work-card__desc">A long-term fascination with the shapes and patterns light makes, when it falls just right.</span>
+        </span>
+      </button>
+
+      <!-- Ocean Girl -->
+      <button class="work-card" data-modal="modal-oceangirl">
+        <span class="media-placeholder ratio-4-3">
+          <span class="media-placeholder__label">IMG · ocean-girl-hero.jpg</span>
+        </span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Travel · Kent Coast, UK</span>
+          <span class="work-card__title">Ocean Girl</span>
+          <span class="work-card__desc">A visit to the Kentish coast, in the dying embers of summer.</span>
+        </span>
+      </button>
+
+      <!-- People -->
+      <button class="work-card" data-modal="modal-people">
+        <span class="media-placeholder ratio-4-3">
+          <span class="media-placeholder__label">IMG · people-portrait-01.jpg</span>
+        </span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Portraiture</span>
+          <span class="work-card__title">People</span>
+          <span class="work-card__desc">Portrait work of various people, over the years.</span>
+        </span>
+      </button>
+
+      <!-- Under The Sea -->
+      <button class="work-card" data-modal="modal-underthesea">
+        <span class="media-placeholder ratio-4-3">
+          <span class="media-placeholder__label">IMG · under-the-sea-01.jpg</span>
+        </span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Macro · Aquarium</span>
+          <span class="work-card__title">Under The Sea</span>
+          <span class="work-card__desc">The colourful world below the surface — glowing anemones and multicoloured jellyfish.</span>
+        </span>
+      </button>
+
+      <!-- Wimbledon -->
+      <button class="work-card" data-modal="modal-wimbledon">
+        <span class="media-placeholder ratio-tall">
+          <span class="media-placeholder__label">IMG · wimbledon-01.jpg</span>
+        </span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Street / Events · Wimbledon, London</span>
+          <span class="work-card__title">Wimbledon</span>
+          <span class="work-card__desc">The All England Lawn Tennis Championships, with a focus on the crowd's headwear.</span>
+        </span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>thx for being here</p>
+  <p class="footer__meta">© <span id="year"></span> Tristan Gage</p>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<!-- ============ GALLERY MODALS ============ -->
+
+<dialog class="case-modal" id="modal-barbican">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Infrared · Barbican, London</p>
+    <h3>Barbican Dreamland</h3>
+    <p class="case-modal__sub">A study in Infrared Photography.</p>
+    <div class="case-modal__prose">
+      <p>Shot at Barbican Conservatory using a specially adapted Sony A7 set up with an infrared adapter on the sensor and one on the lens, to pick up light that we humans can't see. The result, following some digital processing, is a beautiful dreamscape of pinks instead of the expected greens.</p>
+    </div>
+    <div class="case-modal__media case-modal__media--2col">
+      <span class="media-placeholder ratio-tall"><span class="media-placeholder__label">IMG · barbican-dreamland-01.jpg</span></span>
+      <span class="media-placeholder ratio-tall"><span class="media-placeholder__label">IMG · barbican-dreamland-02.jpg</span></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-colorado">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Travel · Colorado, USA</p>
+    <h3>Colorado</h3>
+    <div class="case-modal__prose">
+      <p>For those who need an introduction, Colorado is brimming with stunning vistas and incredible landscapes. It was also hit by a blanket of snow during my trip over there. Doesn't really get more picturesque.</p>
+    </div>
+    <div class="case-modal__media">
+      <span class="media-placeholder ratio-16-9 span-3"><span class="media-placeholder__label">IMG · colorado-hero.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · colorado-02.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · colorado-03.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · colorado-04.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · colorado-05.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · colorado-06.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · colorado-07.jpg</span></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-comehome">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Street / Events · Central London</p>
+    <h3>It's Coming Home</h3>
+    <p class="case-modal__sub">*spoiler alert — it didn't come home*</p>
+    <div class="case-modal__prose">
+      <p>A series of images taken in Central London during the 2020 Euro Men's Football Final between England and Italy, capturing the energy and chaos that comes from thousands of football fans congregating together to support their country.</p>
+    </div>
+    <div class="case-modal__media">
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · come-home-01.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · come-home-02.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · come-home-03.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · come-home-04.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · come-home-05.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · come-home-06.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · come-home-07.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · come-home-08.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · come-home-09.jpg</span></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-iceland">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Travel · Iceland</p>
+    <h3>Land of Ice and Fire</h3>
+    <div class="case-modal__prose">
+      <p>A study of the natural beauty of the country of Iceland, with a particular emphasis on the spectacular water features on offer around the south coast.</p>
+    </div>
+    <div class="case-modal__media">
+      <span class="media-placeholder ratio-tall span-2"><span class="media-placeholder__label">VIDEO · iceland-coast.mp4</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · iceland-02.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · iceland-03.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · iceland-04.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · iceland-05.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · iceland-06.jpg</span></span>
+      <span class="media-placeholder ratio-16-9 span-3"><span class="media-placeholder__label">IMG · iceland-hot-tub-sunset.jpg</span></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-lightshadow">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Street Photography</p>
+    <h3>Light And Shadow</h3>
+    <div class="case-modal__prose">
+      <p>A selection of images showcasing a long-term fascination with street photography — in particular, the shapes and patterns that occur when the light falls just right.</p>
+    </div>
+    <div class="case-modal__media">
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · light-shadow-01.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · light-shadow-02.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · light-shadow-03.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · light-shadow-04.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · light-shadow-05.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · light-shadow-06.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · light-shadow-07.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · light-shadow-08.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · light-shadow-09.jpg</span></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-oceangirl">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Travel · Kent Coast, UK</p>
+    <h3>Ocean Girl</h3>
+    <div class="case-modal__prose">
+      <p>A visit to the Kentish coast in the dying embers of summer.</p>
+    </div>
+    <div class="case-modal__media">
+      <span class="media-placeholder ratio-16-9 span-3"><span class="media-placeholder__label">IMG · ocean-girl-hero.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · ocean-girl-02.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · ocean-girl-03.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · ocean-girl-04.jpg</span></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-people">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Portraiture</p>
+    <h3>People</h3>
+    <div class="case-modal__prose">
+      <p>Portrait work of various people, over the years.</p>
+    </div>
+    <div class="case-modal__media">
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · people-01.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · people-02.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · people-03.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · people-04.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · people-05.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · people-06.jpg</span></span>
+      <span class="media-placeholder ratio-16-9 span-3"><span class="media-placeholder__label">IMG · people-closeup-bw.jpg</span></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-underthesea">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Macro · Aquarium</p>
+    <h3>Under The Sea</h3>
+    <div class="case-modal__prose">
+      <p>An insight into the colourful world below the surface, from the glowing anemones to the apparently multicoloured jellyfish.</p>
+    </div>
+    <div class="case-modal__media">
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · under-sea-01.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · under-sea-02.jpg</span></span>
+      <span class="media-placeholder ratio-tall"><span class="media-placeholder__label">IMG · under-sea-03.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · under-sea-jelly-red.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · under-sea-jelly-purple.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · under-sea-jelly-green.jpg</span></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-wimbledon">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Street / Events · Wimbledon, London</p>
+    <h3>Wimbledon</h3>
+    <div class="case-modal__prose">
+      <p>A study of the All England Lawn Tennis Championships, with a focus on the people and their headwear at the summer event.</p>
+    </div>
+    <div class="case-modal__media">
+      <span class="media-placeholder ratio-tall span-1"><span class="media-placeholder__label">IMG · wimbledon-hero.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · wimbledon-02.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · wimbledon-03.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · wimbledon-04.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · wimbledon-05.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · wimbledon-06.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · wimbledon-07.jpg</span></span>
+      <span class="media-placeholder ratio-4-3"><span class="media-placeholder__label">IMG · wimbledon-08.jpg</span></span>
+    </div>
+  </div>
+</dialog>
+
+<script src="js/main.js"></script>
+</body>
+</html>
