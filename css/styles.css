@@ -516,12 +516,21 @@ section:not(.hero) {
   object-fit: cover;
 }
 
-/* Landscape images are never cropped — shown in full, letterboxed if needed. */
-.media-placeholder.ratio-16-9 .media-placeholder__img,
-.media-placeholder.ratio-4-3 .media-placeholder__img,
-.media-placeholder.ratio-wide .media-placeholder__img {
-  object-fit: contain;
-  background: var(--bg);
+/* Real photos: sized to their own true aspect ratio (via width/height attrs)
+   instead of a preset ratio box, so nothing is ever cropped or letterboxed. */
+.media-placeholder--natural {
+  border: none;
+  background: none;
+}
+.media-placeholder--natural::before { content: none; }
+.media-placeholder--natural .media-placeholder__img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: unset;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
 }
 
 .span-2 { grid-column: span 2; }
@@ -534,6 +543,7 @@ section:not(.hero) {
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: start;
   gap: 28px;
 }
 
@@ -547,6 +557,7 @@ section:not(.hero) {
 }
 .work-card:hover { transform: translateY(-6px); }
 .work-card:hover .media-placeholder { border-color: var(--accent-dim); }
+.work-card:hover .media-placeholder--natural .media-placeholder__img { border-color: var(--accent-dim); }
 
 .work-card__body {
   padding: 20px 4px 0;
@@ -870,6 +881,7 @@ section.work--gallery {
 .case-modal__media {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: start;
   gap: 14px;
 }
 .case-modal__media--2col { grid-template-columns: repeat(2, 1fr); }
