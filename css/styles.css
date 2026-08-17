@@ -516,6 +516,14 @@ section:not(.hero) {
   object-fit: cover;
 }
 
+/* Landscape images are never cropped — shown in full, letterboxed if needed. */
+.media-placeholder.ratio-16-9 .media-placeholder__img,
+.media-placeholder.ratio-4-3 .media-placeholder__img,
+.media-placeholder.ratio-wide .media-placeholder__img {
+  object-fit: contain;
+  background: var(--bg);
+}
+
 .span-2 { grid-column: span 2; }
 .span-3 { grid-column: span 3; }
 
@@ -778,6 +786,7 @@ section.work--gallery {
   float: right;
   top: 0;
   right: 0;
+  z-index: 20;
   width: 38px;
   height: 38px;
   border-radius: 50%;
