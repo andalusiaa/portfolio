@@ -515,6 +515,9 @@ section:not(.hero) {
   height: 100%;
   object-fit: cover;
 }
+.media-placeholder__img--top {
+  object-position: center 20%;
+}
 
 /* Real photos: sized to their own true aspect ratio (via width/height attrs)
    instead of a preset ratio box, so nothing is ever cropped or letterboxed.
