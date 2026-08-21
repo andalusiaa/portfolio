@@ -867,9 +867,32 @@ section:not(.hero) {
    ========================================================================== */
 
 section.page-intro {
+  position: relative;
   padding: 180px 0 64px;
   border-top: none;
+  overflow: hidden;
   background: var(--bg);
+}
+.page-intro__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: image-set(
+    url("../assets/img/photography-header.avif") type("image/avif"),
+    url("../assets/img/photography-header.jpg") type("image/jpeg")
+  );
+  background-size: cover;
+  background-position: center;
+}
+.page-intro__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(11,11,13,0.55) 0%, rgba(11,11,13,0.82) 65%, rgba(11,11,13,0.94) 100%);
+}
+section.page-intro .container {
+  position: relative;
+  z-index: 2;
 }
 .page-intro h1 {
   font-size: clamp(32px, 5vw, 52px);
