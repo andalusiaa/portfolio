@@ -517,7 +517,10 @@ section:not(.hero) {
 }
 
 /* Real photos: sized to their own true aspect ratio (via width/height attrs)
-   instead of a preset ratio box, so nothing is ever cropped or letterboxed. */
+   instead of a preset ratio box, so nothing is ever cropped or letterboxed.
+   Reserved now for "hero" full-width images, where a forced crop would
+   look heavy-handed. Everything else uses the landscape/portrait classes
+   below for a consistent, cover-cropped preview. */
 .media-placeholder--natural {
   border: none;
   background: none;
@@ -532,6 +535,19 @@ section:not(.hero) {
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-strong);
 }
+
+/* Real photos, everywhere else: a consistent preview shape per orientation,
+   cropped with object-fit: cover (inherited from the base .media-placeholder
+   / .media-placeholder__img rules above). The lightbox always shows the
+   full, uncropped original regardless of this preview crop. */
+.media-placeholder--landscape {
+  aspect-ratio: 4 / 3;
+}
+.media-placeholder--landscape::before { content: none; }
+.media-placeholder--portrait {
+  aspect-ratio: 3 / 4;
+}
+.media-placeholder--portrait::before { content: none; }
 
 .span-2 { grid-column: span 2; }
 .span-3 { grid-column: span 3; }
@@ -551,13 +567,13 @@ section:not(.hero) {
   break-inside: avoid;
   margin-bottom: 14px;
 }
-.gallery .media-placeholder--natural {
+.gallery .media-placeholder {
   cursor: zoom-in;
 }
-.gallery .media-placeholder--natural .media-placeholder__img {
+.gallery .media-placeholder__img {
   transition: opacity 0.3s var(--ease);
 }
-.gallery .media-placeholder--natural:hover .media-placeholder__img {
+.gallery .media-placeholder:hover .media-placeholder__img {
   opacity: 0.85;
 }
 .gallery .media-placeholder--hero {
@@ -1022,7 +1038,7 @@ section.work--gallery {
   gap: 14px;
 }
 .case-modal__media--2col { grid-template-columns: repeat(2, 1fr); }
-.case-modal__media--videos { grid-template-columns: repeat(2, 1fr); }
+.case-modal__media--videos { grid-template-columns: 1fr; gap: 24px; }
 
 .video-embed {
   position: relative;
@@ -1070,7 +1086,6 @@ section.work--gallery {
   .work-grid { grid-template-columns: 1fr; }
   .side-grid { grid-template-columns: 1fr; }
   .case-modal__media { grid-template-columns: 1fr; }
-  .case-modal__media--videos { grid-template-columns: 1fr; }
   .span-2, .span-3 { grid-column: span 1; }
   .photo-grid { columns: 2 160px; }
 
