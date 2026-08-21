@@ -580,6 +580,14 @@ section:not(.hero) {
   grid-column: 1 / -1;
 }
 
+/* Sunrise Brewery only: every thumbnail cropped to a square, regardless of
+   its own orientation. The lightbox is untouched and still opens each
+   image at its true aspect ratio. */
+.gallery--square .media-placeholder--landscape,
+.gallery--square .media-placeholder--portrait {
+  aspect-ratio: 1 / 1;
+}
+
 @media (max-width: 900px) {
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
