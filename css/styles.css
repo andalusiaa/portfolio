@@ -552,6 +552,13 @@ section:not(.hero) {
 }
 .media-placeholder--portrait::before { content: none; }
 
+/* Photography page index cards only: crop every project thumbnail to a
+   square, regardless of its own orientation. */
+.work-grid--square .media-placeholder--landscape,
+.work-grid--square .media-placeholder--portrait {
+  aspect-ratio: 1 / 1;
+}
+
 .span-2 { grid-column: span 2; }
 .span-3 { grid-column: span 3; }
 
