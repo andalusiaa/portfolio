@@ -537,6 +537,137 @@ section:not(.hero) {
 .span-3 { grid-column: span 3; }
 
 /* ==========================================================================
+   Gallery (masonry) — replaces the grid layout for photo galleries inside
+   case-study modals. Each image keeps its true aspect ratio and packs into
+   the shortest column, so there's no forced row-height and no gaps. Click
+   any image to open it in the lightbox.
+   ========================================================================== */
+
+.gallery {
+  columns: 3 200px;
+  column-gap: 14px;
+}
+.gallery .media-placeholder {
+  break-inside: avoid;
+  margin-bottom: 14px;
+}
+.gallery .media-placeholder--natural {
+  cursor: zoom-in;
+}
+.gallery .media-placeholder--natural .media-placeholder__img {
+  transition: opacity 0.3s var(--ease);
+}
+.gallery .media-placeholder--natural:hover .media-placeholder__img {
+  opacity: 0.85;
+}
+.gallery .media-placeholder--hero {
+  column-span: all;
+  margin-top: 14px;
+}
+.gallery .media-placeholder--hero:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .gallery { columns: 2 160px; }
+}
+@media (max-width: 640px) {
+  .gallery { columns: 1; }
+}
+
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+
+.lightbox {
+  border: none;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  background: transparent;
+  overflow: visible;
+}
+.lightbox::backdrop {
+  background: rgba(6, 6, 7, 0.92);
+  backdrop-filter: blur(4px);
+}
+.lightbox__stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px;
+}
+.lightbox__img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+}
+.lightbox__close,
+.lightbox__nav {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-raised);
+  border: 1px solid var(--border-strong);
+  color: var(--fg-dim);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.lightbox__close:hover,
+.lightbox__nav:hover { color: var(--fg); border-color: var(--accent); }
+
+.lightbox__close {
+  top: 24px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
+  font-size: 22px;
+  line-height: 1;
+}
+.lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+}
+.lightbox__nav--prev { left: 24px; }
+.lightbox__nav--next { right: 24px; }
+.lightbox__nav[hidden] { display: none; }
+
+.lightbox__counter {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "SF Mono", "Roboto Mono", monospace;
+  font-size: 12.5px;
+  color: var(--fg-dim);
+  background: var(--bg-raised);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+}
+
+@media (max-width: 640px) {
+  .lightbox__stage { padding: 24px 24px 72px; }
+  .lightbox__nav { width: 40px; height: 40px; }
+  .lightbox__nav--prev { left: 10px; }
+  .lightbox__nav--next { right: 10px; }
+  .lightbox__close { top: 14px; right: 14px; }
+}
+
+/* ==========================================================================
    Work grid
    ========================================================================== */
 

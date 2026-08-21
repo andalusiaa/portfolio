@@ -155,6 +155,82 @@ document.querySelectorAll(".case-modal").forEach((modal) => {
   });
 });
 
+/* ---------- Lightbox (gallery images) ---------- */
+(function () {
+  const lightbox = document.getElementById("lightbox");
+  if (!lightbox) return;
+
+  const stage = lightbox.querySelector(".lightbox__stage");
+  const img = document.getElementById("lightboxImg");
+  const counter = document.getElementById("lightboxCounter");
+  const closeBtn = document.getElementById("lightboxClose");
+  const prevBtn = document.getElementById("lightboxPrev");
+  const nextBtn = document.getElementById("lightboxNext");
+
+  let items = [];
+  let index = 0;
+
+  function show() {
+    const source = items[index];
+    img.src = source.currentSrc || source.src;
+    img.alt = source.alt || "";
+    counter.textContent = items.length > 1 ? `${index + 1} / ${items.length}` : "";
+    const multi = items.length > 1;
+    prevBtn.hidden = !multi;
+    nextBtn.hidden = !multi;
+  }
+
+  function openAt(gallery, startIndex) {
+    items = gallery;
+    index = startIndex;
+    show();
+    lightbox.showModal();
+  }
+
+  function next() {
+    index = (index + 1) % items.length;
+    show();
+  }
+  function prev() {
+    index = (index - 1 + items.length) % items.length;
+    show();
+  }
+
+  document.querySelectorAll(".gallery").forEach((gallery) => {
+    const imgs = [...gallery.querySelectorAll("img.media-placeholder__img")];
+    imgs.forEach((image, i) => {
+      const tile = image.closest(".media-placeholder");
+      if (!tile) return;
+      tile.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openAt(imgs, i);
+      });
+    });
+  });
+
+  closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    lightbox.close();
+  });
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    next();
+  });
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    prev();
+  });
+
+  lightbox.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") prev();
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (!stage.contains(e.target) || e.target === stage) lightbox.close();
+  });
+})();
+
 /* ---------- Back to top ---------- */
 const toTop = document.getElementById("toTop");
 window.addEventListener("scroll", () => {
