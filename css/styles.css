@@ -541,7 +541,7 @@ section:not(.hero) {
    / .media-placeholder__img rules above). The lightbox always shows the
    full, uncropped original regardless of this preview crop. */
 .media-placeholder--landscape {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
 }
 .media-placeholder--landscape::before { content: none; }
 .media-placeholder--portrait {
@@ -553,19 +553,19 @@ section:not(.hero) {
 .span-3 { grid-column: span 3; }
 
 /* ==========================================================================
-   Gallery (masonry) — replaces the grid layout for photo galleries inside
-   case-study modals. Each image keeps its true aspect ratio and packs into
-   the shortest column, so there's no forced row-height and no gaps. Click
-   any image to open it in the lightbox.
+   Gallery — CSS Grid, so tiles always read left-to-right then top-to-bottom
+   (source order), and never suffer the Safari bug where CSS multi-column
+   content randomly collapses to a single column once images finish
+   loading. Each row's height is set by its tallest tile; shorter tiles
+   align to the top rather than stretching. Click any image to open it in
+   the lightbox.
    ========================================================================== */
 
 .gallery {
-  columns: 3 200px;
-  column-gap: 14px;
-}
-.gallery .media-placeholder {
-  break-inside: avoid;
-  margin-bottom: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 14px;
 }
 .gallery .media-placeholder {
   cursor: zoom-in;
@@ -577,18 +577,14 @@ section:not(.hero) {
   opacity: 0.85;
 }
 .gallery .media-placeholder--hero {
-  column-span: all;
-  margin-top: 14px;
-}
-.gallery .media-placeholder--hero:first-child {
-  margin-top: 0;
+  grid-column: 1 / -1;
 }
 
 @media (max-width: 900px) {
-  .gallery { columns: 2 160px; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
-  .gallery { columns: 1; }
+  .gallery { grid-template-columns: 1fr; }
 }
 
 /* ==========================================================================
