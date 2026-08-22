@@ -605,6 +605,34 @@ section:not(.hero) {
   .gallery { grid-template-columns: 1fr; }
 }
 
+/* On mobile, every image (work/photo cards and gallery tiles) is already
+   shown full width in a single column, so there's no "uniform grid" for
+   the landscape/portrait/square crops to protect — just show each photo
+   at its own true aspect ratio, uncropped. */
+@media (max-width: 640px) {
+  .media-placeholder--landscape,
+  .media-placeholder--portrait,
+  .gallery--square .media-placeholder--landscape,
+  .gallery--square .media-placeholder--portrait,
+  .work-grid--square .media-placeholder--landscape,
+  .work-grid--square .media-placeholder--portrait {
+    aspect-ratio: auto;
+    border: none;
+    background: none;
+  }
+  .media-placeholder--landscape .media-placeholder__img,
+  .media-placeholder--portrait .media-placeholder__img {
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: unset;
+    object-position: unset;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-strong);
+  }
+}
+
 /* ==========================================================================
    Lightbox
    ========================================================================== */
@@ -1067,6 +1095,10 @@ section.work--gallery {
   transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .case-modal__prose a:hover { color: var(--fg); border-color: var(--fg); }
+.case-modal__prose-media {
+  display: block;
+  margin: 8px 0 28px;
+}
 
 .case-modal__media {
   display: grid;
