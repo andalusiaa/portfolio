@@ -15,7 +15,7 @@
   --border-strong: rgba(255, 255, 255, 0.18);
 
   --serif: "Fraunces", Georgia, serif;
-  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --sans: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --container: 1180px;
   --gap: 24px;
