@@ -155,6 +155,13 @@ document.querySelectorAll(".case-modal").forEach((modal) => {
   });
 });
 
+/* ---------- Open a case study straight from a link on another page ---------- */
+/* e.g. cv.html links to index.html#modal-ubereats */
+(function () {
+  const target = document.getElementById(window.location.hash.slice(1));
+  if (target && target.matches(".case-modal")) target.showModal();
+})();
+
 /* ---------- Lightbox (gallery images) ---------- */
 (function () {
   const lightbox = document.getElementById("lightbox");

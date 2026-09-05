@@ -905,12 +905,20 @@ section.page-intro {
   position: absolute;
   inset: 0;
   z-index: 0;
+  background-size: cover;
+  background-position: center;
+}
+.page-intro__media--photography {
   background-image: image-set(
     url("../assets/img/photography-header.avif") type("image/avif"),
     url("../assets/img/photography-header.jpg") type("image/jpeg")
   );
-  background-size: cover;
-  background-position: center;
+}
+.page-intro__media--cv {
+  background-image: image-set(
+    url("../assets/img/cv-header.avif") type("image/avif"),
+    url("../assets/img/cv-header.jpg") type("image/jpeg")
+  );
 }
 .page-intro__scrim {
   position: absolute;
@@ -940,6 +948,97 @@ section.page-intro .container {
 section.work--gallery {
   border-top: none;
   padding-top: 56px;
+}
+
+/* ==========================================================================
+   CV page
+   ========================================================================== */
+
+.cv-timeline { background: var(--bg); }
+.cv-skills { background: var(--bg-alt); }
+.cv-cta { background: var(--bg); }
+
+.timeline {
+  position: relative;
+  max-width: 760px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: var(--border-strong);
+}
+.timeline__item {
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 48px;
+}
+.timeline__item:last-child { margin-bottom: 0; }
+.timeline__marker {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+.timeline__date {
+  font-family: "SF Mono", "Roboto Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  margin-bottom: 8px;
+}
+.timeline__role {
+  font-size: 19px;
+  margin-bottom: 4px;
+}
+.timeline__role a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+.timeline__role a:hover { color: var(--fg); border-color: var(--fg); }
+.timeline__org {
+  font-size: 13.5px;
+  color: var(--fg-dim);
+  margin-bottom: 10px;
+}
+.timeline__desc {
+  font-size: 14.5px;
+  color: var(--fg-dim);
+  line-height: 1.7;
+  max-width: 640px;
+}
+.timeline__desc a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+.timeline__desc a:hover { color: var(--fg); border-color: var(--fg); }
+
+.cv-skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: flex-start;
+}
+
+.cv-cta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.cv-cta__inner h2 { font-size: clamp(24px, 3.5vw, 34px); }
+
+@media (max-width: 640px) {
+  .cv-cta__inner { flex-direction: column; align-items: flex-start; }
 }
 
 /* ==========================================================================
