@@ -205,6 +205,11 @@ img { max-width: 100%; display: block; }
   transition: transform 0.5s var(--ease-bounce), width 0.5s var(--ease-bounce), opacity 0.3s var(--ease);
 }
 
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .nav__cta {
   font-size: 14px;
   font-weight: 600;
@@ -214,6 +219,20 @@ img { max-width: 100%; display: block; }
   transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
 }
 .nav__cta:hover { border-color: var(--accent); background: rgba(79,184,169,0.1); }
+.nav__cta--tap {
+  font-family: "Bricolage Grotesque", var(--sans);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.045em; /* tight set, like the Tap Watch wordmark */
+  /* larger type with slightly trimmed padding to keep the button compact */
+  padding-block: 8.4px;
+}
+/* Hover: red outline with a soft faded red fill - the red of a London postcode
+   sign, as in the E17 on the Tap Watch logo */
+.nav__cta--tap:hover {
+  border-color: #CB091C;
+  background: rgba(203, 9, 28, 0.15);
+}
 
 .nav__toggle {
   display: none;
@@ -552,6 +571,13 @@ section:not(.hero) {
 }
 .media-placeholder--portrait::before { content: none; }
 
+/* Side-project card thumbnails */
+/* Artwork on a plain white ground: show the whole image, never cropped. */
+.media-placeholder--paper { background: #fff; }
+.media-placeholder__img--contain { object-fit: contain; }
+/* Tall artwork: bias the 16:9 crop towards the top so the heads stay in frame. */
+.media-placeholder__img--top-edge { object-position: center 7%; }
+
 /* Photography page index cards only: crop every project thumbnail to a
    square, regardless of its own orientation. */
 .work-grid--square .media-placeholder--landscape,
@@ -788,17 +814,6 @@ section:not(.hero) {
 .photo-grid .media-placeholder {
   margin-bottom: 20px;
   break-inside: avoid;
-}
-
-/* ==========================================================================
-   Side grid
-   ========================================================================== */
-
-.side-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  margin-top: 40px;
 }
 
 /* ==========================================================================
@@ -1236,7 +1251,7 @@ section.work--gallery {
    ========================================================================== */
 
 @media (max-width: 900px) {
-  .nav__links, .nav__cta { display: none; }
+  .nav__links, .nav__actions { display: none; }
   .nav__toggle { display: flex; }
 
   .about__grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1252,7 +1267,6 @@ section.work--gallery {
   section:not(.hero) { padding: 80px 0; }
 
   .work-grid { grid-template-columns: 1fr; }
-  .side-grid { grid-template-columns: 1fr; }
   .case-modal__media { grid-template-columns: 1fr; }
   .span-2, .span-3 { grid-column: span 1; }
   .photo-grid { columns: 2 160px; }

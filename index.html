@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tristan Gage — Strategy &amp; Creative | Photographer</title>
 <meta name="description" content="Tristan Gage — portfolio. Strategy and creative work, photography, film and brand design. D&AD Shift 2025.">
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
-<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="icon" type="image/png" href="assets/img/favicon.png?v=2">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Bricolage+Grotesque:wght@800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap">
 <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -32,7 +32,9 @@
     <a href="cv.html">CV</a>
     <a href="#contact">Contact</a>
   </nav>
-  <a class="nav__cta" href="#contact">Get in touch</a>
+  <div class="nav__actions">
+    <a class="nav__cta nav__cta--tap" href="https://www.tap-watch.co.uk" target="_blank" rel="noopener">Tap Watch</a>
+  </div>
   <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -42,6 +44,7 @@
   <a href="#about">About</a>
   <a href="#work">Work</a>
   <a href="photography.html">Photography</a>
+  <a href="https://www.tap-watch.co.uk" target="_blank" rel="noopener">Tap Watch</a>
   <a href="#side">Side</a>
   <a href="cv.html">CV</a>
   <a href="#contact">Contact</a>
@@ -179,15 +182,43 @@
 <!-- ============ SIDE / EXTRA ============ -->
 <section class="side" id="side">
   <div class="container">
-    <div class="section-head section-head--row">
-      <div>
-        <p class="eyebrow">On the Side</p>
-        <h2>Small bits of art, works in progress</h2>
-      </div>
+    <div class="section-head">
+      <p class="eyebrow">On the Side</p>
+      <h2>Small bits of art, works in progress</h2>
     </div>
-    <div class="side-grid">
-      <span class="media-placeholder media-placeholder--natural"><picture><source srcset="assets/img/side-tudor-house-illustration.avif" type="image/avif"><img class="media-placeholder__img" width="1500" height="1500" src="assets/img/side-tudor-house-illustration.jpg" alt="Line illustration of a Tudor house" loading="lazy"></picture></span>
-      <span class="media-placeholder media-placeholder--portrait"><picture><source srcset="assets/img/side-parrot-series.avif" type="image/avif"><img class="media-placeholder__img" width="1035" height="1440" src="assets/img/side-parrot-series.jpg" alt="King parrot illustration series in varied colourways" loading="lazy"></picture></span>
+
+    <div class="work-grid">
+
+      <!-- 1: Ancient House -->
+      <button class="work-card" data-modal="modal-ancienthouse">
+        <span class="media-placeholder media-placeholder--landscape media-placeholder--paper"><picture><source srcset="assets/img/side-tudor-house-illustration.avif" type="image/avif"><img class="media-placeholder__img media-placeholder__img--contain" width="1500" height="1500" src="assets/img/side-tudor-house-illustration.jpg" alt="Line illustration of a Tudor house" loading="lazy"></picture></span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Illustration · Line Drawing</span>
+          <span class="work-card__title">Ancient House</span>
+          <span class="work-card__desc">A line drawing of a Tudor house in Walthamstow, still standing since it was first built in the 15th century.</span>
+        </span>
+      </button>
+
+      <!-- 2: King Parrot -->
+      <button class="work-card" data-modal="modal-kingparrot">
+        <span class="media-placeholder media-placeholder--landscape"><picture><source srcset="assets/img/side-parrot-series.avif" type="image/avif"><img class="media-placeholder__img media-placeholder__img--top-edge" width="1035" height="1440" src="assets/img/side-parrot-series.jpg" alt="King parrot illustration series in varied colourways" loading="lazy"></picture></span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Illustration · Digital Painting</span>
+          <span class="work-card__title">King Parrot</span>
+          <span class="work-card__desc">A king parrot illustration series in varied colourways.</span>
+        </span>
+      </button>
+
+      <!-- 3: Tap Watch -->
+      <button class="work-card" data-modal="modal-tapwatch">
+        <span class="media-placeholder media-placeholder--landscape"><picture><source srcset="assets/img/tap-watch-frontage.avif" type="image/avif"><img class="media-placeholder__img" width="1126" height="666" src="assets/img/tap-watch-frontage.jpg" alt="Tap Watch E17 wordmark" loading="lazy"></picture></span>
+        <span class="work-card__body">
+          <span class="work-card__tag">Side Project</span>
+          <span class="work-card__title">Tap Watch</span>
+          <span class="work-card__desc">More details and screenshots to follow.</span>
+        </span>
+      </button>
+
     </div>
   </div>
 </section>
@@ -410,6 +441,53 @@
       <span class="media-placeholder media-placeholder--landscape"><picture><source srcset="assets/img/wintersun-bts-14.avif" type="image/avif"><img class="media-placeholder__img" width="1440" height="960" src="assets/img/wintersun-bts-14.JPG" alt="Winter Sun — behind the scenes, image 14" loading="lazy"></picture></span>
       <span class="media-placeholder media-placeholder--landscape"><picture><source srcset="assets/img/wintersun-bts-15.avif" type="image/avif"><img class="media-placeholder__img" width="1440" height="960" src="assets/img/wintersun-bts-15.JPG" alt="Winter Sun — behind the scenes, image 15" loading="lazy"></picture></span>
       <span class="media-placeholder media-placeholder--landscape"><picture><source srcset="assets/img/wintersun-bts-16.avif" type="image/avif"><img class="media-placeholder__img" width="1440" height="960" src="assets/img/wintersun-bts-16.JPG" alt="Winter Sun — behind the scenes, image 16" loading="lazy"></picture></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-ancienthouse">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Illustration · Line Drawing</p>
+    <h3>Ancient House</h3>
+    <p class="case-modal__sub">A line drawing of a Tudor house</p>
+
+    <div class="case-modal__prose">
+      <p>A line drawing of a Tudor house in Walthamstow, still standing since it was first built in the 15th century. The oldest residential house in London, it has a remarkable history and has seen plenty of change from its humble spot in Walthamstow Village.</p>
+    </div>
+
+    <div class="gallery">
+      <span class="media-placeholder media-placeholder--natural media-placeholder--hero"><picture><source srcset="assets/img/side-tudor-house-illustration.avif" type="image/avif"><img class="media-placeholder__img" width="1500" height="1500" src="assets/img/side-tudor-house-illustration.jpg" alt="Line illustration of a Tudor house" loading="lazy"></picture></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-kingparrot">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Illustration · Digital Painting</p>
+    <h3>King Parrot</h3>
+    <p class="case-modal__sub">A series in varied colourways</p>
+
+    <div class="case-modal__prose">
+      <p>A king parrot illustration series in varied colourways. These beautiful birds are native to south east Queensland, where my wife is originally from. I decided to do some digital painting of one for her one Valentines day.</p>
+    </div>
+
+    <div class="gallery">
+      <span class="media-placeholder media-placeholder--natural media-placeholder--hero"><picture><source srcset="assets/img/side-parrot-series.avif" type="image/avif"><img class="media-placeholder__img" width="1035" height="1440" src="assets/img/side-parrot-series.jpg" alt="King parrot illustration series in varied colourways" loading="lazy"></picture></span>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="modal-tapwatch">
+  <div class="case-modal__inner">
+    <button class="case-modal__close" data-close aria-label="Close">×</button>
+    <p class="case-modal__tag">Side Project</p>
+    <h3>Tap Watch</h3>
+    <p class="case-modal__sub">More details and screenshots to follow</p>
+
+    <div class="gallery">
+      <span class="media-placeholder media-placeholder--natural media-placeholder--hero"><picture><source srcset="assets/img/tap-watch-frontage.avif" type="image/avif"><img class="media-placeholder__img" width="1126" height="666" src="assets/img/tap-watch-frontage.jpg" alt="Tap Watch E17 wordmark" loading="lazy"></picture></span>
     </div>
   </div>
 </dialog>

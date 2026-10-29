@@ -249,7 +249,7 @@ toTop.addEventListener("click", () => {
 
 /* ---------- Scroll reveal ---------- */
 const revealTargets = document.querySelectorAll(
-  ".section-head, .about__copy, .about__tags, .work-card, .side-grid, .contact__grid, .photo-grid"
+  ".section-head, .about__copy, .about__tags, .work-card, .contact__grid, .photo-grid"
 );
 revealTargets.forEach((el) => el.classList.add("reveal"));
 
